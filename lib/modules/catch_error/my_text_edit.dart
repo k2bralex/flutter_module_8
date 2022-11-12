@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_module_8/src/fetch_file.dart';
-
 ///Add callBack function [TextFieldCallback] to return file name and
 ///file content from widget
-typedef void TextFieldCallback(String fileName, String text);
+typedef void TextFieldCallback(String fileName);
 
 ///To get text from text field add [TextEditingController],
 ///initiate [TextFieldCallback] and
@@ -15,7 +13,7 @@ class MyTextEdit extends StatelessWidget {
 
   MyTextEdit({super.key, required this.onTextChanged});
 
-  @override
+    @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(15),
@@ -41,11 +39,11 @@ class MyTextEdit extends StatelessWidget {
           Expanded(
             flex: 1,
             child: TextButton(
-              onPressed: () async {
+              onPressed: () {
                 //print(_controller.text);
-                String response =
-                    await fetchFileFromAssets("assets/${_controller.text}.txt");
-                onTextChanged(_controller.text, response);
+                /*String response =
+                    await fetchFileFromAssets("assets/${_controller.text}.txt");*/
+                onTextChanged(_controller.text);
               },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,

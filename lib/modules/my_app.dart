@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'default_tab_controler.dart';
+import 'my_app_tabs.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
